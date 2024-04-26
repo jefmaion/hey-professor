@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 #. "${0%/*}/h"
 
-
 # Cores
 NC='\033[0m'
 BBlue='\033[1:34m'
