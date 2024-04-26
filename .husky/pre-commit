@@ -1,7 +1,4 @@
-#!/usr/bin/env sh
-#. "${0%/*}/h"
-
-#"$(dirname -- "$0")/_/husky.sh"
+"$(dirname -- "$0")/_/husky.sh"
 
 
 
@@ -9,13 +6,16 @@
 
 if [ $? -ne 0 ]; then
     echo "Opa! Deu ruim aqui com PHPSTAN. Arrume antes de continuar...";
-fi
+    exit 1;
+fi;
 
 
-STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACH | grep ".php\{0,1\}$")
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep ".php\{0,1\}$")
 
 for FILE in $STAGED_FILES
 do
     .vendor/bin/pint "${FILE}"
     git add "${FILE}"
 done;
+
+exit 0;
