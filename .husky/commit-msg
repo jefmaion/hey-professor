@@ -20,4 +20,4 @@ if [[ $COMMIT_MESSAGE == $ISSUE_ID* ]]; then
 	exit 0
 fi
 
-echo "$ISSUE_ID: $COMMIT_MESSAGE" >$1
+echo "a $ISSUE_ID: $COMMIT_MESSAGE" >$1
