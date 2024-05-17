@@ -14,6 +14,7 @@ return new class () extends Migration {
             $table->id();
             $table->timestamps();
             $table->text('question');
+            $table->boolean('draft')->default(true);
         });
     }
 
